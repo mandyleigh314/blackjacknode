@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blackjack</title>
+     <link rel="stylesheet" href="/styles.css">
+     <link href="https://fonts.googleapis.com/css?family=Neucha|Varela+Round" rel="stylesheet">
+   </head>
+<body>
+  <div id="msg">
+  {{#message}}
+  {{.}}
+  {{/message}}
+</div>
+<h1>Dealer's Cards</h1>
+{{#dealerscards}}
+<img src="{{image}}">
+{{/dealerscards}}
+{{dealerstotal}}
+<h1>Your Cards</h1>
+{{#playerscards}}
+<img src="{{image}}">
+{{/playerscards}}
+{{playerstotal}}
+{{#gamestatus}}
+<div id="buttons">
+<form action="/hit" method="post">
+  <input type="submit" name="hit" value="Hit">
+</form>
+<form action="/stay" method="post">
+  <input type="submit" name="stay" value="Stay">
+</form>
+</div>
+{{/gamestatus}}
+<form action="/reset" method="post">
+  <input type="submit" name="reset" value="Reset">
+</form>
+  </body>
+</html>
